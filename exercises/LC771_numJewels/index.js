@@ -1,8 +1,11 @@
 var numJewelsInStones = function (J, S) {
   let jewelCount = 0;
-  let jewels = J.split();
-  for (let i = 0; i < S.length; i++) {
-    if (J.includes(S[i])) {
+  let jMap ={};
+  for(i in J){
+      jMap[J[i]]=true;
+  }
+  for (let k = 0; k < S.length; k++) {
+    if (jMap[S[k]]) {
       jewelCount++;
     }
   }

@@ -1,10 +1,12 @@
 var countAndSay = function (n) {
+  //initialize variables
   var str = "1";
   var tmp = "";
   var last = "";
   var count = 0;
   var len = 0;
 
+  //loop through combos
   for (var i = 1; i < n; i++) {
     tmp = "";
     last = "";
@@ -33,5 +35,6 @@ var countAndSay = function (n) {
     str = tmp;
   }
 
+  
   return str;
 };

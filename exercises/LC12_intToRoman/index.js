@@ -1,8 +1,10 @@
 var intToRoman = function (num) {
+  //initialize the denominations and starting variables
   const numberArray = [1000, 500, 100, 50, 10, 5, 1];
   let roman = "";
   let arabic = num;
 
+  //loop through with if statement logic
   for (let j = 0; j < numberArray.length; j += 1) {
     let quantity = Math.floor(arabic / numberArray[j]);
 
@@ -30,6 +32,7 @@ var intToRoman = function (num) {
   return roman;
 };
 
+//helper function to add Letters to the final roman number
 const addLetters = (quantity, value) => {
   let string = "";
   for (let z = 0; z < quantity; z += 1) {

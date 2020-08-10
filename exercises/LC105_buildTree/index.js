@@ -12,6 +12,5 @@ var buildTree = function (preorder, inorder) {
 
     return root;
   }
-  //return using helper function to return solution
   return helper(0, preorder.length - 1, 0, inorder.length - 1);
 };

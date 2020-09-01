@@ -1,10 +1,8 @@
 var isBalanced = function (root) {
+  //initialize the differetial in branches
   let maxDiff = 0;
 
-  getHeightDiff(root);
-
-  return maxDiff <= 1;
-
+  //recursive traversal function check node balance
   function getHeightDiff(node) {
     if (node == null) return 0;
 
@@ -15,4 +13,7 @@ var isBalanced = function (root) {
 
     return Math.max(leftHeight, rightHeight) + 1;
   }
+  getHeightDiff(root);
+  //return true if balanced
+  return maxDiff <= 1;
 };

@@ -1,10 +1,13 @@
 var ladderLength = function (beginWord, endWord, wordList) {
+  //base case for empty
   if (!wordList.includes(endWord)) return 0;
+  
 
   const wordIn = new Array(wordList.length).fill(true);
   let q = [];
   q.push({ wrd: beginWord, level: 1 });
 
+  //loop through with conditionals on differences
   while (q.length) {
     let curr = q.pop();
     if (curr.wrd === endWord) return curr.level;

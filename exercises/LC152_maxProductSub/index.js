@@ -1,8 +1,10 @@
 var maxProduct = function (nums) {
+  //initialize max, currmin and max varibales
   let max = -Infinity;
   let currentMax = 1;
   let currentMin = 1;
 
+  //loop through and check for min and max changes needed to be made
   for (let i = 0; i < nums.length; i++) {
     let prevMax = currentMax;
     currentMax = Math.max(nums[i], prevMax * nums[i], currentMin * nums[i]);
@@ -10,5 +12,6 @@ var maxProduct = function (nums) {
     max = Math.max(currentMax, max);
   }
 
+  //return max
   return max;
 };

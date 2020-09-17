@@ -1,9 +1,10 @@
+//helper function 
 var combine = function (n, k) {
   let out = comb(k, n);
   return out;
 };
 
-function comb(max, n, out = [], curr = [], index = 1) {
+function comb(max, n, out = [], curr = [], index = 1) {  
   if (curr.length === max) {
     out.push(curr);
     return [];

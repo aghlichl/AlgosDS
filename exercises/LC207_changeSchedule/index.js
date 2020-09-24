@@ -1,7 +1,3 @@
-let visiting;   // is being explored
-let visited;  // is already explored
-let graph;
-
 var canFinish = function(numCourses, prerequisites) {
     graph = new Map();
     visiting = new Set();
@@ -19,7 +15,7 @@ var canFinish = function(numCourses, prerequisites) {
     
     for(const [v,e] of graph){
         if(DFS(v)){
-            return false; //if cyclic it will not finish so it is false
+            return false;
         }
     }
     
@@ -28,20 +24,19 @@ var canFinish = function(numCourses, prerequisites) {
 
 var DFS = function(v){
     visiting.add(v);
-    let edges = graph.get(v);   // get all the edges to explore
+    let edges = graph.get(v); 
     
     if(edges){
-        //console.log(edges)
        for(let e of edges){
-            if(visited.has(e)){ //skip if it is explored already
+            if(visited.has(e)){ 
                 continue;
             }
-
-            if(visiting.has(e)){ //found e is being explored
+            //if found return true
+            if(visiting.has(e)){ 
                 return true;
             }
-
-            if(DFS(e)){ // DFS deeper if this e is cyclic
+            //cyclic check
+            if(DFS(e)){ 
                 return true;
             }
         } 

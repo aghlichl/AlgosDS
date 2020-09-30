@@ -31,18 +31,16 @@ var DFS = function(v){
             if(visited.has(e)){ 
                 continue;
             }
-            //if found return true
             if(visiting.has(e)){ 
                 return true;
             }
-            //cyclic check
             if(DFS(e)){ 
                 return true;
             }
         } 
     }   
     
-    visiting.delete(v); // remove from visiting set when all decedant v are visited
+    visiting.delete(v); 
     visited.add(v);
     return false;
 }

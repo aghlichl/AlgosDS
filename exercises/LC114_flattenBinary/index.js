@@ -1,6 +1,8 @@
 var flatten = function (root) {
+  //initialize a previous pointer
   let prev = null;
 
+  //recursive traversal helper function
   const traverse = (node) => {
     if (node === null) {
       return;
@@ -12,6 +14,6 @@ var flatten = function (root) {
     node.right = prev;
     prev = node;
   };
-
+  //recursive function call
   traverse(root);
 };
